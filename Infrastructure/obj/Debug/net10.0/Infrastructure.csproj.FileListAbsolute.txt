@@ -1,0 +1,15 @@
+C:\Users\muham\OneDrive\Desktop\.NET\ch.23-24.10.2026\Infrastructure\bin\Debug\net10.0\Infrastructure.deps.json
+C:\Users\muham\OneDrive\Desktop\.NET\ch.23-24.10.2026\Infrastructure\bin\Debug\net10.0\Infrastructure.dll
+C:\Users\muham\OneDrive\Desktop\.NET\ch.23-24.10.2026\Infrastructure\bin\Debug\net10.0\Infrastructure.pdb
+C:\Users\muham\OneDrive\Desktop\.NET\ch.23-24.10.2026\Infrastructure\bin\Debug\net10.0\Domain.dll
+C:\Users\muham\OneDrive\Desktop\.NET\ch.23-24.10.2026\Infrastructure\bin\Debug\net10.0\Domain.pdb
+C:\Users\muham\OneDrive\Desktop\.NET\ch.23-24.10.2026\Infrastructure\obj\Debug\net10.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\muham\OneDrive\Desktop\.NET\ch.23-24.10.2026\Infrastructure\obj\Debug\net10.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\muham\OneDrive\Desktop\.NET\ch.23-24.10.2026\Infrastructure\obj\Debug\net10.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\muham\OneDrive\Desktop\.NET\ch.23-24.10.2026\Infrastructure\obj\Debug\net10.0\Infrastructure.AssemblyInfo.cs
+C:\Users\muham\OneDrive\Desktop\.NET\ch.23-24.10.2026\Infrastructure\obj\Debug\net10.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\muham\OneDrive\Desktop\.NET\ch.23-24.10.2026\Infrastructure\obj\Debug\net10.0\Infrastr.15EFFBFE.Up2Date
+C:\Users\muham\OneDrive\Desktop\.NET\ch.23-24.10.2026\Infrastructure\obj\Debug\net10.0\Infrastructure.dll
+C:\Users\muham\OneDrive\Desktop\.NET\ch.23-24.10.2026\Infrastructure\obj\Debug\net10.0\refint\Infrastructure.dll
+C:\Users\muham\OneDrive\Desktop\.NET\ch.23-24.10.2026\Infrastructure\obj\Debug\net10.0\Infrastructure.pdb
+C:\Users\muham\OneDrive\Desktop\.NET\ch.23-24.10.2026\Infrastructure\obj\Debug\net10.0\ref\Infrastructure.dll
