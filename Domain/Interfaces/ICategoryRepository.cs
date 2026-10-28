@@ -9,4 +9,5 @@ public interface ICategoryRepository
     void UpdateCategory(Category category);
     Category GetCategory(int id);
     List<Category> GetCategories();
+    int GetAmountOfCategories();
 }

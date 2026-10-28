@@ -10,4 +10,10 @@ public interface IProductRepository
     Product GetProduct(int id);
     List<Product> GetProducts();
     List<Product> GetProductsByCategory(string name);
+    int GetAmountOfProducts();
+    int GetAmountOfProductsByCategory(int categoryId);
+    decimal GetMinPriceOfProductByCategory(int categoryId);
+    decimal GetMaxPriceOfProductByCategory(int categoryId);
+    decimal GetAveragePriceOfProductByCategory(int categoryId);
+    decimal GetTotalPriceOfProducts();
 }
