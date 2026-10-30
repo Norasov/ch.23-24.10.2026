@@ -12,52 +12,54 @@ public class CategoryRepository : ICategoryRepository
     {
         _context=context;
     }
-    public void AddCategory(Category category)
+    public async Task AddCategoryAsync(Category category)
     {
         using var connection = _context.Connection();
         connection.Open();
         var sql = "insert into categories(name) values(@name)";
-        connection.Execute(sql,category);
+        await connection.ExecuteAsync(sql,category);
     }
 
-    public void DeleteCategory(int id)
+    public async Task DeleteCategoryAsync(int id)
     {
         using var connection = _context.Connection();
         connection.Open();
         var sql = "delete from categories where id = @id";
-        connection.Execute(sql,new{id});
+        await connection.ExecuteAsync(sql,new{id});
     }
 
-    public int GetAmountOfCategories()
+    public async Task<int> GetAmountOfCategoriesAsync()
     {
         using var connection = _context.Connection();
         connection.Open();
         var query = "select count(*) from categories";
-        return connection.ExecuteScalar<int>(query);
+        var amount = await connection.ExecuteScalarAsync<int>(query);
+        return amount;
     }
 
 
-    public List<Category> GetCategories()
+    public async Task<List<Category>> GetCategoriesAsync()
     {
         using var connection = _context.Connection();
         connection.Open();
         var sql = "select id, name from categories";
-        return connection.Query<Category>(sql).ToList();
+        var category = await connection.QueryAsync<Category>(sql);
+        return category.ToList();
     }
 
-    public Category GetCategory(int id)
+    public async Task<Category?> GetCategoryAsync(int id)
     {
         using var connection = _context.Connection();
         connection.Open();
         var sql = "select * from categories where id = @id";
-        return connection.QueryFirst<Category>(sql,new{id});
+        return await connection.QueryFirstOrDefaultAsync<Category>(sql,new{id});
     }
 
-    public void UpdateCategory(Category category)
+    public async Task UpdateCategoryAsync(Category category)
     {
         using var connection = _context.Connection();
         connection.Open();
         var sql = "update categories set name = @name where id = @id";
-        connection.QueryFirst<Category>(sql,category);
+        await connection.ExecuteAsync(sql,category);
     }
 }

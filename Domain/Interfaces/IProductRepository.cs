@@ -4,16 +4,16 @@ namespace Domain.Interfaces;
 
 public interface IProductRepository
 {
-    void AddProduct(Product product);
-    void DeleteProduct(int id);
-    void UpdateProduct(Product product);
-    Product GetProduct(int id);
-    List<Product> GetProducts();
-    List<Product> GetProductsByCategory(string name);
-    int GetAmountOfProducts();
-    int GetAmountOfProductsByCategory(int categoryId);
-    decimal GetMinPriceOfProductByCategory(int categoryId);
-    decimal GetMaxPriceOfProductByCategory(int categoryId);
-    decimal GetAveragePriceOfProductByCategory(int categoryId);
-    decimal GetTotalPriceOfProducts();
+    Task AddProductAsync(Product product);
+    Task DeleteProductAsync(int id);
+    Task UpdateProductAsync(Product product);
+    Task<Product?> GetProductAsync(int id);
+    Task<List<Product>> GetProductsAsync();
+    Task<List<Product>> GetProductsByCategoryAsync(string name);
+    Task<int> GetAmountOfProductsAsync();
+    Task<int> GetAmountOfProductsByCategoryAsync(int categoryId);
+    Task<decimal> GetMinPriceOfProductByCategoryAsync(int categoryId);
+    Task<decimal> GetMaxPriceOfProductByCategoryAsync(int categoryId);
+    Task<decimal> GetAveragePriceOfProductByCategoryAsync(int categoryId);
+    Task<decimal> GetTotalPriceOfProductsAsync();
 }
