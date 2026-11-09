@@ -7,25 +7,27 @@ namespace Infrastructure.Repositories;
 
 public class ProductRepository : IProductRepository
 {
-    private readonly DapperContext _context;
-    public ProductRepository(DapperContext context)
+    private readonly AppDbContext _context;
+    public ProductRepository(AppDbContext context)
     {
         _context = context;
     }
-    public async Task AddProductAsync(Product product)
+    public async Task<bool> AddProductAsync(Product product)
     {
         using var connection = _context.Connection();
         connection.Open();
         var sql = "insert into products(name,price,categoryid) values(@name,@price,@categoryid)";
-        await connection.ExecuteAsync(sql, product);
+        var addProduct = await connection.ExecuteAsync(sql, product);
+        return addProduct > 0;
     }
 
-    public async Task DeleteProductAsync(int id)
+    public async Task<bool> DeleteProductAsync(int id)
     {
         using var connection = _context.Connection();
         connection.Open();
         var sql = "delete from products where id = @id";
-        await connection.QueryFirstOrDefaultAsync<Product>(sql, new { id });
+        var deleteProduct = await connection.ExecuteAsync(sql, new { id });
+        return deleteProduct > 0;
     }
 
     public async Task<List<Product>> GetProductsAsync()
@@ -45,12 +47,13 @@ public class ProductRepository : IProductRepository
         return await connection.QueryFirstOrDefaultAsync<Product>(sql, new { id });
     }
 
-    public async Task UpdateProductAsync(Product product)
+    public async Task<bool> UpdateProductAsync(Product product)
     {
         using var connection = _context.Connection();
         connection.Open();
         var sql = "update products set name = @name, price = @price, categoryid= @categoryid where id = @id";
-        await connection.ExecuteAsync(sql, product);
+        var updateProduct = await connection.ExecuteAsync(sql, product);
+        return updateProduct > 0;
     }
 
     public async Task<List<Product>> GetProductsByCategoryAsync(string name)

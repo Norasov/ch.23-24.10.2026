@@ -7,31 +7,30 @@ namespace Infrastructure.Repositories;
 
 public class CategoryRepository : ICategoryRepository
 {
-    private readonly DapperContext _context;
-    public CategoryRepository(DapperContext context)
+    private readonly AppDbContext _context;
+    public CategoryRepository(AppDbContext context)
     {
-        _context=context;
+        _context = context;
     }
-    public async Task AddCategoryAsync(Category category)
+    public async Task<bool> AddCategoryAsync(Category category)
     {
         using var connection = _context.Connection();
-        connection.Open();
         var sql = "insert into categories(name) values(@name)";
-        await connection.ExecuteAsync(sql,category);
+        var addCategory = await connection.ExecuteAsync(sql, category);
+        return addCategory > 0;
     }
 
-    public async Task DeleteCategoryAsync(int id)
+    public async Task<bool> DeleteCategoryAsync(int id)
     {
         using var connection = _context.Connection();
-        connection.Open();
         var sql = "delete from categories where id = @id";
-        await connection.ExecuteAsync(sql,new{id});
+        var deleteCategory = await connection.ExecuteAsync(sql, new { id });
+        return deleteCategory > 0;
     }
 
     public async Task<int> GetAmountOfCategoriesAsync()
     {
         using var connection = _context.Connection();
-        connection.Open();
         var query = "select count(*) from categories";
         var amount = await connection.ExecuteScalarAsync<int>(query);
         return amount;
@@ -41,7 +40,6 @@ public class CategoryRepository : ICategoryRepository
     public async Task<List<Category>> GetCategoriesAsync()
     {
         using var connection = _context.Connection();
-        connection.Open();
         var sql = "select id, name from categories";
         var category = await connection.QueryAsync<Category>(sql);
         return category.ToList();
@@ -50,16 +48,15 @@ public class CategoryRepository : ICategoryRepository
     public async Task<Category?> GetCategoryAsync(int id)
     {
         using var connection = _context.Connection();
-        connection.Open();
         var sql = "select * from categories where id = @id";
-        return await connection.QueryFirstOrDefaultAsync<Category>(sql,new{id});
+        return await connection.QueryFirstOrDefaultAsync<Category>(sql, new { id });
     }
 
-    public async Task UpdateCategoryAsync(Category category)
+    public async Task<bool> UpdateCategoryAsync(Category category)
     {
         using var connection = _context.Connection();
-        connection.Open();
         var sql = "update categories set name = @name where id = @id";
-        await connection.ExecuteAsync(sql,category);
+        var updateCategory = await connection.ExecuteAsync(sql, category);
+        return updateCategory > 0;
     }
 }
