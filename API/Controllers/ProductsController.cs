@@ -1,7 +1,6 @@
-using System.Runtime.InteropServices;
+using API.Extensions;
+using Application.DTOs.Products;
 using Application.Interfaces;
-using Application.Responses;
-using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -13,32 +12,37 @@ public class ProductsController(IProductService service) : ControllerBase
     private readonly IProductService _service = service;
 
     [HttpGet]
-    public async Task<ApiResponse<List<Product>>> GetProducts()
+    public async Task<IActionResult> GetProducts()
     {
-        return  await _service.GetProducts();
+        var products = await _service.GetProducts();
+        return this.ToActionResult(products);
     }
 
     [HttpGet("{id:int}")]
-    public async Task<ApiResponse<Product>> GetProduct(int id)
+    public async Task<IActionResult> GetProduct(int id)
     {
-        return await _service.GetProduct(id);
+        var product = await _service.GetProduct(id);
+        return this.ToActionResult(product);
     }
 
     [HttpPost]
-    public async Task<ApiResponse<bool>> Add(Product product)
+    public async Task<IActionResult> Add(CreateProductDTO productDTO)
     {
-        return await _service.AddProduct(product);
+        var add = await _service.AddProduct(productDTO);
+        return this.ToActionResult(add);
     }
 
     [HttpPut("{id:int}")]
-    public async Task<ApiResponse<bool>> Update(Product product)
+    public async Task<IActionResult> Update(UpdateProductDTO productDTO, int id)
     {
-        return await _service.UpdateProduct(product);
+        var update = await _service.UpdateProduct(productDTO, id);
+        return this.ToActionResult(update);
     }
 
-    [HttpDelete]
-    public async Task<ApiResponse<bool>> Delete(int id)
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> Delete(int id)
     {
-        return await _service.DeleteProduct(id);
+        var delete = await _service.DeleteProduct(id);
+        return this.ToActionResult(delete);
     }
 }

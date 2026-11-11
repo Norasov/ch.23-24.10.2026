@@ -1,7 +1,8 @@
+using Application.DTOs.Categories;
 using Application.Interfaces;
-using Application.Responses;
-using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
+using API.Extensions;
+
 
 namespace API.Controllers;
 
@@ -9,36 +10,48 @@ namespace API.Controllers;
 [Route("api/[controller]")]
 public class CategoriesController(ICategoryService service) : ControllerBase
 {
-        private readonly ICategoryService _service = service;
+    private readonly ICategoryService _service = service;
 
     [HttpGet]
-    public async Task<ApiResponse<List<Category>>> GetCategorys()
+    public async Task<IActionResult> GetCategories()
     {
-        return  await _service.GetCategories();
+        var categories = await _service.GetCategories();
+        return this.ToActionResult(categories);
+    }
+
+    [HttpGet("amount-of-category")]
+    public async Task<IActionResult> GetAmount()
+    {
+        var amount = await _service.GetAmountOfCategories();
+        return this.ToActionResult(amount);
     }
 
     [HttpGet("{id:int}")]
-    public async Task<ApiResponse<Category>> GetCategory(int id)
+    public async Task<IActionResult> GetCategory(int id)
     {
-        return await _service.GetCategory(id);
+        var category = await _service.GetCategory(id);
+        return this.ToActionResult(category);
     }
 
     [HttpPost]
-    public async Task<ApiResponse<bool>> Add(Category category)
+    public async Task<IActionResult> Add(CreateCategoryDTO categoryDTO)
     {
-        return await _service.AddCategory(category);
+        var add = await _service.AddCategory(categoryDTO);
+        return this.ToActionResult(add);
     }
 
     [HttpPut("{id:int}")]
-    public async Task<ApiResponse<bool>> Update(Category category)
+    public async Task<IActionResult> Update(UpdateCategoryDTO categoryDTO, int id)
     {
-        return await _service.UpdateCategory(category);
+        var update = await _service.UpdateCategory(categoryDTO, id);
+        return this.ToActionResult(update);
     }
 
-    [HttpDelete]
-    public async Task<ApiResponse<bool>> Delete(int id)
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> Delete(int id)
     {
-        return await _service.DeleteCategory(id);
+        var delete = await _service.DeleteCategory(id);
+        return this.ToActionResult(delete);
     }
 
 }

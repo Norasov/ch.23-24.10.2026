@@ -1,13 +1,13 @@
-using Application.Responses;
-using Domain.Entities;
+using Application.DTOs.Products;
+using Application.HttpStatusCodes;
 
 namespace Application.Interfaces;
 
 public interface IProductService
 {
-    Task<ApiResponse<bool>> AddProduct(Product product);
-    Task<ApiResponse<bool>> DeleteProduct(int id);
-    Task<ApiResponse<bool>> UpdateProduct(Product product);
-    Task<ApiResponse<Product>> GetProduct(int id);
-    Task<ApiResponse<List<Product>>> GetProducts();
+    Task<ServiceStatusCodes<bool>> AddProduct(CreateProductDTO productDTO);
+    Task<ServiceStatusCodes<bool>> DeleteProduct(int id);
+    Task<ServiceStatusCodes<bool>> UpdateProduct(UpdateProductDTO productDTO, int id);
+    Task<ServiceStatusCodes<ProductDTO>> GetProduct(int id);
+    Task<ServiceStatusCodes<List<ProductDTO>>> GetProducts();
 }

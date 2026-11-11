@@ -11,7 +11,6 @@ builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 
 
-
 builder.Services.AddScoped<AppDbContext>();
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
@@ -27,9 +26,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.UseHttpsRedirection();
-
 
 app.MapControllers();
 app.Run();

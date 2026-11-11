@@ -1,6 +1,6 @@
-using System.Net;
+using Application.DTOs.Categories;
+using Application.HttpStatusCodes;
 using Application.Interfaces;
-using Application.Responses;
 using Domain.Entities;
 using Domain.Interfaces;
 
@@ -9,42 +9,73 @@ namespace Application.Services;
 public class CategoryService(ICategoryRepository repository) : ICategoryService
 {
     private readonly ICategoryRepository _repository = repository;
-    public async Task<ApiResponse<bool>> AddCategory(Category category)
+    
+    public async Task<ServiceStatusCodes<bool>> AddCategory(CreateCategoryDTO categoryDTO)
     {
-        var addCategory = await _repository.AddCategoryAsync(category);
-        return addCategory == true
-        ? new ApiResponse<bool>(HttpStatusCode.Created,"Added!", addCategory)
-        : new ApiResponse<bool>(HttpStatusCode.BadRequest, "Not added!", false);
+        Category category = new()
+        {
+            Name = categoryDTO.Name
+        };
+        var add = await _repository.AddCategoryAsync(category);
+        if(!add)
+            return ServiceStatusCodes<bool>.BadRequest("Не удалось добавить категорию.");
+        return ServiceStatusCodes<bool>.Created(add);
     }
 
-    public async Task<ApiResponse<bool>> DeleteCategory(int id)
+    public async Task<ServiceStatusCodes<bool>> DeleteCategory(int id)
     {
         var delete = await _repository.DeleteCategoryAsync(id);
-        return delete == true
-        ? new ApiResponse<bool>(HttpStatusCode.NoContent, "Deleted!", true)
-        : new ApiResponse<bool>(HttpStatusCode.NotFound, "Not deleted!", false);
+        if(!delete)
+            return ServiceStatusCodes<bool>.NotFound("Нет категории с таким идентификатором.");
+
+        return ServiceStatusCodes<bool>.NoContent();
     }
 
-    public async Task<ApiResponse<List<Category>>> GetCategories()
+    public async Task<ServiceStatusCodes<int>> GetAmountOfCategories()
+    {
+        var amount = await _repository.GetAmountOfCategoriesAsync();
+        return ServiceStatusCodes<int>.Ok(amount);
+    }
+
+
+    public async Task<ServiceStatusCodes<List<CategoryDTO>>> GetCategories()
     {
         var categories = await _repository.GetCategoriesAsync();
-        return new ApiResponse<List<Category>>(HttpStatusCode.OK, "list of categories", categories);
+        
+        List<CategoryDTO> categoryDTOs = [];
+        foreach (var category in categories)
+        {
+            CategoryDTO categoryDTO = new();
+            categoryDTO.Name = category.Name;
+            categoryDTOs.Add(categoryDTO);
+        }
+
+        return ServiceStatusCodes<List<CategoryDTO>>.Ok(categoryDTOs);
     }
 
-    public async Task<ApiResponse<Category>> GetCategory(int id)
+    public async Task<ServiceStatusCodes<CategoryDTO>> GetCategory(int id)
     {
         var get = await _repository.GetCategoryAsync(id);
-        return get != null
-        ? new ApiResponse<Category>(HttpStatusCode.OK, "Category with id", get)
-        : new ApiResponse<Category>(HttpStatusCode.NotFound, "Not found!");
+        if(get is null)
+            return ServiceStatusCodes<CategoryDTO>.NotFound("Нет категории с таким идентификатором");
+
+        CategoryDTO categoryDTO = new();
+        categoryDTO.Name = get.Name;
+
+        return ServiceStatusCodes<CategoryDTO>.Ok(categoryDTO);
     }
 
-    public async Task<ApiResponse<bool>> UpdateCategory(Category category)
-    {
-        var update = await _repository.UpdateCategoryAsync(category);
-        return update == true
-        ? new ApiResponse<bool>(HttpStatusCode.OK, "Updated!", true)
-        : new ApiResponse<bool>(HttpStatusCode.NotFound, "Not found!", false);
-    }
+    public async Task<ServiceStatusCodes<bool>> UpdateCategory(UpdateCategoryDTO categoryDTO, int id)
+    {        
+        var update = await _repository.GetCategoryAsync(id);
+        
+        if(update is null)
+            return ServiceStatusCodes<bool>.NotFound("Нет категории с таким идентификатором.");
+        
 
+        update.Name = categoryDTO.Name;
+        await _repository.UpdateCategoryAsync(update);
+
+        return ServiceStatusCodes<bool>.Ok(true);
+    }
 }
