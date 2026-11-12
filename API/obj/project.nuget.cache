@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jSNBu9FfisM=",
+  "dgSpecHash": "2toGMaNDIYs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\muham\\.nuget\\packages\\dapper\\2.1.89\\dapper.2.1.89.nupkg.sha512",
     "C:\\Users\\muham\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.3\\microsoft.aspnetcore.openapi.10.0.3.nupkg.sha512",

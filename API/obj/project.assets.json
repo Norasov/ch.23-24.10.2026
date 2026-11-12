@@ -617,7 +617,7 @@
       "Domain >= 1.0.0",
       "Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.3",
-      "swashbuckle.aspnetcore >= 10.3.1"
+      "Swashbuckle.AspNetCore >= 10.3.1"
     ]
   },
   "packageFolders": {
@@ -626,11 +626,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\API\\API.csproj",
+      "projectPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\API\\API.csproj",
       "packagesPath": "C:\\Users\\muham\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\API\\obj\\",
+      "outputPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\muham\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -645,14 +645,14 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Application\\Application.csproj"
+            "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Application\\Application.csproj"
             },
-            "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Domain\\Domain.csproj"
+            "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -677,7 +677,7 @@
             "target": "Package",
             "version": "[10.0.3, )"
           },
-          "swashbuckle.aspnetcore": {
+          "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[10.3.1, )"
           }

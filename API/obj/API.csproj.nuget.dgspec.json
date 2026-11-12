@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\API\\API.csproj": {}
+    "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\API\\API.csproj": {
+    "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\API\\API.csproj",
+        "projectPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\API\\API.csproj",
         "packagesPath": "C:\\Users\\muham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\API\\obj\\",
+        "outputPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\muham\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,14 +26,14 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Application\\Application.csproj"
+              "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Application\\Application.csproj"
               },
-              "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Domain\\Domain.csproj"
+              "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -500,14 +500,14 @@
         }
       }
     },
-    "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Application\\Application.csproj": {
+    "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\muham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Application\\obj\\",
+        "outputPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\muham\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -522,8 +522,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Domain\\Domain.csproj"
+              "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Domain\\Domain.csproj"
               }
             }
           }
@@ -837,14 +837,14 @@
         }
       }
     },
-    "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Domain\\Domain.csproj": {
+    "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\muham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\muham\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1170,14 +1170,14 @@
         }
       }
     },
-    "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\muham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\muham\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1192,11 +1192,11 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Application\\Application.csproj"
+              "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Application\\Application.csproj"
               },
-              "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\muham\\OneDrive\\Desktop\\.NET\\MiniShop\\Domain\\Domain.csproj"
+              "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\muham\\Downloads\\MiniShop_serilog\\MiniShop\\Domain\\Domain.csproj"
               }
             }
           }
