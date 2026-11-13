@@ -2,3 +2,7 @@ bin/
 obj/
 .vs/
 logs/
+
+bin/
+obj/
+logs/
